@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+body{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+
+}
+.text{
+    margin-top: 5px;
+    text-align: center;
+}
+#counter{
+    height: 100vh;
+    width: 150vw;
+    background-color:pink;
+}
+#section{
+    margin-top: 15px;
+    text-align: center;
+}
+textarea{
+    outline: none;
+    font-size: 20px;
+}

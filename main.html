@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Word Counter </title>
+</head>
+
+<body>
+    <div id="counter">
+        <div class="text">
+            <h1> Word Counter </h1>
+        </div>
+        <div id="section">
+            <textarea name="" onkeyup="Count()" id="input" cols="30" rows="20"></textarea>
+        </div>
+        <div id="results">
+            <div class="result1">
+                <h1 id="characters"></h1>
+            </div>
+            <div class="result2">
+                <h1 id="words"></h1>
+            </div>
+            <div class="result2">
+                <h1 id="paragraphs"></h1>
+            </div>
+            <div class="result2">
+                <h1 id="sentences"></h1>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function Count() {
+        var inp = document.getElementById('input').value;
+        let sC = 0, paragrapghC = 0;
+        document.getElementById('characters').innerHTML = "Total Characters:" + inp.length;
+        let countWords = inp.trim().split(/\s+/).length;
+        let sentence= inp.match(/[\w|\)][.?!](\s|$)/g);
+        if(sentence !== null) sC = sentence.length;
+        paragrapghC = inp.replace(/\n$/gm, '').split(/\n/).length;
+        document.getElementById('words').innerHTML = "Total Words:" + countWords;
+        document.getElementById('paragraphs').innerHTML = "Total Paragraphs:" + paragrapghC;
+        document.getElementById('sentences').innerHTML = "Total sentences:" + sC;
+    }
+
+</script>
+
+</html>
